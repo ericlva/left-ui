@@ -1,0 +1,22 @@
+﻿header
+mask
+toast
+alert
+loading
+layer
+warning404
+viewport
+share
+
+
+
+
+alert  toast  loading  layer  share  9999
+
+mask  999
+
+viewport 默认不设
+
+header  99
+
+warning404  99

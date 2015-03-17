@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Left UI</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui">
+	<link href="../res/style/left.ui.css" rel="stylesheet" />
+	<link href="../res/style/animation.css" rel="stylesheet" />
+	<script src="../libs/jquery.min.js"></script>
+	<style type="text/css">
+		.rotateInRound {
+			-webkit-animation:rotateRound 550ms ease-in-out,fadeIn 550ms ease-in-out;
+		}
+		.rotateInLeftUp {
+			-webkit-animation:rotateLeftUp 550ms ease-in-out,fadeIn 550ms ease-in-out;
+		}
+		.rotateInLeftDown {
+			-webkit-animation:rotateLeftDown 550ms ease-in-out,fadeIn 550ms ease-in-out;
+		}
+		.rotateInRightUp {
+			-webkit-animation:rotateRightUp 550ms ease-in-out,fadeIn 550ms ease-in-out;
+		}
+		.rotateInRightDown {
+			-webkit-animation:rotateRightDown 550ms ease-in-out,fadeIn 550ms ease-in-out;
+		}
+	</style>
+</head>
+<body style="padding:20px;background: rgba(0,0,0,.35);">
+	  <button class="btn-mid btn-primary">rotateInRound</button>
+	  <button class="btn-mid btn-highlight">rotateInLeftUp</button>
+	  <button class="btn-mid btn-primary">rotateInLeftDown</button>
+	  <button class="btn-mid btn-highlight">rotateInRightUp</button>
+	  <button class="btn-mid btn-primary">rotateInRightDown</button>
+	  <br><br><br>
+	  rotateInRound、rotateInLeftUp、rotateInLeftDown、rotateInRightUp、rotateInRightDown这里就不全部写出了，animtion需要和fadeOut 组合运用,如：-webkit-animation:rotateInRound 550ms ease-in-out,fadeOut 550ms ease-in-out;<br><br>
+	 <!--Layout Share -->
+	 <div id="animation-examples" style="width:280px;height:116px;margin:auto;">
+		  <section class="ui-alert">
+			     <div class="alert-hd">
+			  	      <p>订单提交失败<br>服务器响应超时，请稍后再试</p>
+			     </div>
+			     <div class="alert-btn">
+			  	      <button>知道了</button>
+			     </div>
+		 </section>
+	</div>
+	 <script>
+	$(function(){
+		$('.btn-mid').click(function(){
+	      $('#animation-examples').removeClass().addClass($(this).text());
+	      return false;
+	    });
+	});
+</script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Left UI</title>
+	<meta http-equiv="Page-Enter" content="revealTrans(Duration=1.0,Transition=0)">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui">
+	<link href="../res/style/left.ui.css" rel="stylesheet" />
+	<link href="../res/style/demo.css" rel="stylesheet" />
+	<script src="../libs/jquery.min.js"></script>
+</head>
+<body>
+	<div class="layout-frame">
+		 <!--Header-->
+		 <header class="demo-header">
+		 		 <span id="section-title" class="section-title">代码规范</span>
+		 </header>
+		 
+		 <!--body-->
+		 <article class="layout-viewport">
+		 		  <!--左栏菜单-->
+		 		  <div class="demo-side-wrapper">
+		 		  	   <div id="demo-logo">left-ui library</div>
+			 	       <dl class="demo-side-nav">
+			 	      	   <dt><a href="introduction.html" target="iframe" class="demo-nav-selected">代码规范</a></dt>
+			 	      	   <dt><a href="javascript:;">layout</a></dt>
+			 	      	   <div class="demo-nav-menu">
+			 	      	   	    <dd>
+			 	      	   	   	    <a href="layout-viewport.html" target="iframe">viewport</a>
+			 	      	   	   	    <a href="layout-header.html" target="iframe">header</a>
+			 	      	   	   	    <a href="layout-area-list.html" target="iframe">area-list</a>
+			 	      	   	   	    <a href="layout-list.html" target="iframe">list</a>
+			 	      	   	    </dd>
+			 	      	   </div>
+			 	      	   <dt><a href="javascript:;">Components</a></dt>
+			 	      	   <div class="demo-nav-menu">
+			 	      	   	    <dd>
+			 	      	   	   	    <a href="components-alert.html" target="iframe">alert</a>
+			 	      	   	   	    <a href="components-mask.html" target="iframe">mask</a>
+			 	      	   	        <a href="components-loading.html" target="iframe">loading</a>
+			 	      	   	        <a href="components-tabs.html" target="iframe">tabs</a>
+			 	      	   	        <a href="components-search.html" target="iframe">search</a>
+			 	      	   	        <a href="components-select.html" target="iframe">select</a>
+			 	      	   	        <a href="components-keywords.html" target="iframe">keywords</a>
+			 	      	   	        <a href="components-filter.html" target="iframe">filter</a>
+			 	      	   	        <a href="components-layer.html" target="iframe">layer</a>
+			 	      	   	        <a href="components-share.html" target="iframe">share</a>
+			 	      	   	        <a href="components-toast.html" target="iframe">toast</a>
+			 	      	   	        <a href="components-checked.html" target="iframe">checked</a>
+			 	      	   	        <a href="components-switch.html" target="iframe">Switch</a>
+			 	      	   	        <a href="components-num.html" target="iframe">num</a>
+			 	      	   	        <a href="components-rate.html" target="iframe">rate</a>
+			 	      	   	        <a href="components-button.html" target="iframe">button</a>
+			 	      	   	        <a href="components-hightlights.html" target="iframe">hightlights</a>
+			 	      	   	        <a href="components-image.html" target="iframe">image</a>
+			 	      	   	        <a href="components-icon.html" target="iframe">icon</a>
+			 	      	   	        <a href="components-info.html" target="iframe">info</a>
+			 	      	   	    </dd>
+			 	      	   </div>
+			 	      	   <dt><a href="javascript:;">Animation</a></dt>
+			 	      	   <div class="demo-nav-menu">
+			 	      	   	    <dd>
+			 	      	   	   	    <a href="animation-fade.html" target="iframe">fade</a>
+			 	      	   	   	    <a href="animation-bounce.html" target="iframe">bounce</a>
+			 	      	   	   	    <a href="animation-rotate.html" target="iframe">rotate</a>
+			 	      	   	   	    <a href="animation-viewport.html" target="iframe">viewport</a>
+			 	      	   	    </dd>
+			 	      	   </div>
+			 	      	   <dt><a href="#" target="iframe">说明文档</a></dt>
+			 	       </dl>
+		 		  </div>
+
+		 		  <!--右边内容-->
+		 		  <div class="demo-grid-cont">
+		 		  	   <iframe src="animation-viewport.html" name="iframe" frameborder="0" style="width:100%;height:100%"></iframe>
+		 		  </div>
+		 </article>
+	</div>
+
+<script>
+    $(function(){
+		$(".demo-side-nav dt").click(function(){
+			$(this).next(".demo-nav-menu").slideToggle();
+		});
+		$('.demo-side-nav a').click(function(){
+		  $(".demo-side-nav a").removeClass("demo-nav-selected");
+		  $(this).addClass("demo-nav-selected");
+	      $('#section-title').html($(this).text());
+	    });
+
+	})
+</script>
+</body>
+</html>

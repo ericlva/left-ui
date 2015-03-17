@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Left UI</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui">
+	<link href="../res/style/left.ui.css" rel="stylesheet" />
+	<link href="../res/style/animation.css" rel="stylesheet" />
+	<script src="../libs/jquery.min.js"></script>
+	<style type="text/css">
+		.fadeIn {
+			-webkit-animation:fadeIn 650ms ease-in-out both;
+		}
+		.fadeOut {
+			-webkit-animation:fadeOut 650ms ease-in-out both;
+		}
+		.fadeInUp {
+			-webkit-animation:fadeUp 550ms ease-in-out,fadeIn 550ms ease-out;
+		}
+		.fadeInRight {
+			-webkit-animation:fadeRight 550ms ease-in-out,fadeIn 550ms ease-out;
+		}
+		.fadeInDown {
+			-webkit-animation:fadeDown 550ms ease-in-out,fadeIn 550ms ease-out;
+		}
+		.fadeInLeft {
+			-webkit-animation:fadeLeft 550ms ease-in-out,fadeIn 550ms ease-out;
+		}
+	</style>
+</head>
+<body style="padding:20px 0;">
+	  <button class="btn-mid btn-highlight">fadeOut</button>
+	  <button class="btn-mid btn-primary">fadeIn</button>
+	  <button class="btn-mid btn-highlight">fadeInUp</button>
+	  <button class="btn-mid btn-primary">fadeInRight</button>
+	  <button class="btn-mid btn-highlight">fadeInDown</button>
+	  <button class="btn-mid btn-primary">fadeInLeft</button>
+	  <br><br><br>
+	  fadeOutUp、fadeOutRight、fadeOutDown、fadeOutLeft、这里就不全部写出了，animtion需要和fadeOut 组合运用,如：-webkit-animation:fadeUp 550ms ease-in-out,fadeOut 550ms ease-in-out;<br><br>
+	 <!--Layout Share -->
+	 <div id="animation-examples" style="width:100%;height:214px;position:fixed;">
+		  <section class="ui-select">
+		 	       <!--Select HD-->
+		 	       <header class="select-hd">
+		 	     	       <button class="select-cancel">取消</button>
+		 	     	       <h2>次处JS需灵活的做成可配置, flex需设 flex-shrink(收缩比率), 否则无效</h2>
+		 	     	       <button class="select-cancel">确定</button>
+		 	       </header>
+				
+				   <!--Select BD-->
+				   <div class="select-bd">
+				   	    <ul class="select-inner" style="min-width:40%;max-width:40%;">
+				 	  	    <li>10月22日<small>今天</small></li>
+				 	  	    <li>10月23日<small>明天</small></li>
+				 	  	    <li class="current">10月24日<small>后天</small></li>
+				 	  	    <li>10月25日<small>周六</small></li>
+				 	  	    <li>10月26日<small>周日</small></li>
+				 	    </ul>
+				 	    <ul class="select-inner">
+				 	  	    <li>14</li>
+				 	  	    <li>15</li>
+				 	  	    <li>17</li>
+				 	  	    <li>18</li>
+				 	  	    <li>19</li>
+				 	    </ul>
+				 	    <ul class="select-inner">
+				 	  	    <li>21</li>
+				 	  	    <li>22</li>
+				 	  	    <li>23</li>
+				 	  	    <li>24</li>
+				 	  	    <li>25</li>
+				 	    </ul>
+				   </div>
+		  </section>
+	</div>
+	 <script>
+	$(function(){
+		$('.btn-mid').click(function(){
+	      $('#animation-examples').removeClass().addClass($(this).text());
+	      return false;
+	    });
+	});
+</script>
+</body>
+</html>

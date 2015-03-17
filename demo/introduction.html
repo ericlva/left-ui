@@ -1,0 +1,97 @@
+<!DOCTYPE html><html><head><title>HTML代码</title><meta charset='utf-8'><link href="../res/style/markdown.css" rel="stylesheet" /></head><body><p class="note-tags to-remove"><i class="icon-bookmark"></i><code>HTML规则</code> <code>CSS规则</code> </p>
+<h1 class="note-title">HTML代码</h1>
+<h3>硬规范</h3>
+<p><strong>1)</strong> LUI目前主要划分为Layout、Components、Animation库，三大块：<br>     <strong>Layout: </strong> class 命名必须是以<code>layout-</code> 开头，千万不可滥用. 如：<code>.layout-items .layout-item</code> 最好是  <code>.layout-items .item</code>；<br>     <strong>Components: </strong> class 命名必须是以<code>ui-</code> 开头，需要特殊化类名会以<code>--</code> 开头，如：<code>layer--primary</code><br>     <strong>Animation库</strong> 提供各种动画class接口,具体见库的说明文档；<br><strong>2)</strong> <strong>font-face</strong> <code>font-family</code>必须是 <code>'icon-font'</code> , 图标Unicode 字符命名必须是<code>font-</code>;<br><strong>3)</strong> <strong>icon</strong> 对于字体无法实现的<code>icon</code>,我们采用<code>图片sprite</code>技术，class命名必须是<code>icon-</code>开头;<br><strong>4)</strong> <strong>公共CSS</strong> class 命名必须是 <code>g-</code> 开头;<br><strong>5)</strong> ID是用来标识具体模块，命名必须具体且唯一，由前缀和名字组成。不要滥用ID。如： <code>#ticket-list、#flight-tab</code>等。<br><strong>6)</strong> 如JS需要增加class ，可以 <code>.js-xxx</code> 类型，区别的CSS工程师class.</p>
+<h3>z-index 规范</h3>
+<p>z-index 在整个 <code>left.ui</code> 框架中应用非常广特别是组件的组合运用时，我们对组件拆分成三大类：<br><code>alert</code>、<code>toast</code>、<code>loading</code>、<code>layer</code>、<code>share</code> ：<strong><code>z-index:9999</code></strong><br><code>mask</code>：<strong><code>z-index:999</code></strong><br><code>header</code>、<code>warning404</code> ： <strong><code>z-index:99</code></strong><br><code>viewport 默认不设</code></p>
+<h3>基本要求</h3>
+<p><strong>1)</strong> 采用HTML5声明</p>
+<pre class="hljs-dark"><code class="hljs html"><span class="hljs-doctype">&lt;!doctype html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">charset</span>=<span class="hljs-value">"UTF-8"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">title</span>&gt;</span>Document<span class="hljs-tag">&lt;/<span class="hljs-title">title</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>    
+<span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span>
+</code></pre>
+<p><strong>2)</strong> 编码必须声明为UTF-8;<br><strong>3)</strong> &lt;link rel="stylesheet" href="" type="text/css"&gt;  <code>type="text/css"</code>可省略;<br><strong>4)</strong> 如非必要，不允许在<code>html</code>或标签里写<code>style</code>;<br><strong>5)</strong> <code>Link</code> 和<code>style</code> 标签都应该放在head里;<br><strong>6)</strong> 引入CSS文件或JavaScript文件时, 须略去默认类型声明，并在最后给出版本号标示，格式为：<code>?t=20140212</code>，默认版本号为当前修改时间，当文件有更新时，需要相应地修正文件的版本号。如<code>：&lt;link href="main.css?t=20140212" rel="stylesheet" /&gt;</code>;</p>
+<h3>注释</h3>
+<p>HTML 模块注释<br><code>&lt;!--模块描述  Star--&gt;</code><br><code>&lt;!--模块描述  End--&gt;</code><br>建议上线前使用打包工具删除这些注释</p>
+<h3>属性</h3>
+<p><code>&lt;input type=”text” /&gt;</code>, 必要时我们需要针对产品设置type默认值，比如: <code>email、number、url、tel、required</code>等</p>
+<h3>标签</h3>
+<p><strong>1)</strong> 更多的使用<code>HTML5</code>新标签，禁止使用被废弃标签;<br><strong>2)</strong> <code>h1/h2/h3/h4/h5</code>的标签使用，应遵循从大到小的原则去使用;<br><strong>3)</strong> 用<code>div</code>代替<code>table</code>布局，可以使HTML更具灵活性，也方便利用CSS控制;<br><strong>4)</strong> <code>table</code>不建议用于布局，但表现具有明显表格形式的数据，table还是首选;<br><strong>5)</strong> <code>&lt;a href=”#”&gt;&lt;/a&gt;</code>建议都转成<code>block</code>元素，便于用户点击;</p>
+<h3>Viewport</h3>
+<p>基本设置：<code>&lt;meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"&gt;</code> 需要注意 <code>ios7</code>是不支持<code>device-width</code>的，可以直接把<code>width=320.1或JS</code>方法</p>
+<h3>Media Queries</h3>
+<pre class="hljs-dark"><code class="hljs perl">orientation: landscape(横屏)或portrait(竖屏)
+<span class="hljs-variable">@media</span> screen <span class="hljs-keyword">and</span> (orientation:portrait) {
+      body{
+        background:red;    
+      }
+}
+
+<span class="hljs-variable">@media</span> only screen <span class="hljs-keyword">and</span> (min-device-width : <span class="hljs-number">320</span>px) <span class="hljs-keyword">and</span> (max-device-width : <span class="hljs-number">480</span>px) {
+     body{
+        background:red;    
+      }
+}
+
+<span class="hljs-variable">@media</span> only screen <span class="hljs-keyword">and</span> (-webkit-min-device-pixel-ratio : <span class="hljs-number">1.5</span>),
+only screen <span class="hljs-keyword">and</span> (min-device-pixel-ratio : <span class="hljs-number">1.5</span>) {
+}
+
+&lt;<span class="hljs-keyword">link</span> rel=<span class="hljs-string">"stylesheet"</span> media=<span class="hljs-string">"only screen and (-webkit-min-device-pixel-ratio: 2)"</span> type=<span class="hljs-string">"text/css"</span> href=<span class="hljs-string">"iphone4.css"</span> /&gt;
+&lt;<span class="hljs-keyword">link</span> rel=”stylesheet” media=”all <span class="hljs-keyword">and</span> (orientation:portrait)” href=”portrait.css”&gt;
+</code></pre>
+<blockquote>
+<p>资料：<a href="http://nmsdvid.com/snippets/#" target="_blank">http://nmsdvid.com/snippets/#</a> (Media Query Snippets)</p>
+</blockquote><h3>HTML&lt;META&gt;</h3>
+<blockquote>
+<p><a href="https://gist.github.com/ericlva/9071491" target="_blank">https://gist.github.com/ericlva/9071491</a></p>
+</blockquote><hr>
+<h1>CSS代码</h1>
+<h3>基本要求</h3>
+<p><strong>1)</strong> CSS文件顶部需要申明编码为<code>UTF-8</code>;<br><strong>2)</strong> 避免使用<code>filter、expression、@import</code>，尽量不要在CSS中使用<code>!important</code>，更不能使用 <code>*</code>选择器;<br><strong>3)</strong> 字体设置<br><code>font:normal 14px/1.5 "Arial","Lucida Grande",Verdana,"Microsoft YaHei","hei"</code>;<br><strong>4)</strong> 缩进 4 空格;<br><strong>5)</strong> 规则声明的顺序：定位、盒模型<code>（width/height/padding/border/margin）</code>、行高、字体/字号/颜色、背景、CSS3效果等<br><strong>6)</strong> CSS3兼容书写形式和对齐方式，拆分成多行:</p>
+<pre class="hljs-dark"><code class="hljs css"><span class="hljs-tag">a</span><span class="hljs-pseudo">:hover</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">-webkit-transition</span>:<span class="hljs-value">color .<span class="hljs-number">2s</span> linear</span></span>;
+       <span class="hljs-rule"><span class="hljs-attribute">-moz-transition</span>:<span class="hljs-value">color .<span class="hljs-number">2s</span> linear</span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">-ms-transition</span>:<span class="hljs-value">color .<span class="hljs-number">2s</span> linear</span></span>;
+         <span class="hljs-rule"><span class="hljs-attribute">-o-transition</span>:<span class="hljs-value">color .<span class="hljs-number">2s</span> linear</span></span>;
+            <span class="hljs-rule"><span class="hljs-attribute">transition</span>:<span class="hljs-value">color .<span class="hljs-number">2s</span> linear</span></span>;
+<span class="hljs-rule">}</span></span>
+</code></pre>
+<p><strong>7)</strong> CSS3中用逗号分隔的长属性值：</p>
+<pre class="hljs-dark"><code class="hljs css"><span class="hljs-tag">box-shadow</span><span class="hljs-pseudo">:1px</span> 1<span class="hljs-tag">px</span> 1<span class="hljs-tag">px</span> <span class="hljs-id">#000</span>,2<span class="hljs-tag">px</span> 2<span class="hljs-tag">px</span> 1<span class="hljs-tag">px</span> 1<span class="hljs-tag">px</span> <span class="hljs-id">#ccc</span> <span class="hljs-tag">inset</span>;
+<span class="hljs-tag">background-image</span><span class="hljs-pseudo">:linear-gradient(</span><span class="hljs-id">#fff</span>, <span class="hljs-id">#999</span>),<span class="hljs-tag">linear-gradient</span>(<span class="hljs-id">#666</span>, <span class="hljs-id">#333</span>);
+</code></pre>
+<p><strong>8)</strong> 多个selector(&gt;2)每个占一行</p>
+<pre class="hljs-dark"><code class="hljs python">.selector1,
+.selector2,
+.selector3 { ... }
+</code></pre>
+<p><strong>9)</strong> 所有的属性可以按类型分块写,便于查找和观看:</p>
+<pre class="hljs-dark"><code class="hljs css"><span class="hljs-class">.selector</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"><span class="hljs-number">10px</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"><span class="hljs-number">10px</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">margin</span>:<span class="hljs-value"><span class="hljs-number">10px</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">padding</span>:<span class="hljs-value"><span class="hljs-number">10px</span></span></span>;
+
+    <span class="hljs-rule"><span class="hljs-attribute">-webkit-box-flex</span>:<span class="hljs-value"> <span class="hljs-number">1</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">-moz-box-flex</span>:<span class="hljs-value"> <span class="hljs-number">1</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">-webkit-flex</span>:<span class="hljs-value"> <span class="hljs-number">1</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">-ms-flex</span>:<span class="hljs-value"> <span class="hljs-number">1</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">flex</span>:<span class="hljs-value"> <span class="hljs-number">1</span></span></span>;
+
+    <span class="hljs-rule"><span class="hljs-attribute">-webkit-transform</span>:<span class="hljs-value"><span class="hljs-function">rotate</span>(-<span class="hljs-number">45deg</span>)</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">-moz-transform</span>:<span class="hljs-value"><span class="hljs-function">rotate</span>(-<span class="hljs-number">45deg</span>)</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">-ms-transform</span>:<span class="hljs-value"><span class="hljs-function">rotate</span>(-<span class="hljs-number">45deg</span>)</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">-o-transform</span>:<span class="hljs-value"> <span class="hljs-function">rotate</span>(-<span class="hljs-number">45deg</span>)</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">transform</span>:<span class="hljs-value"> <span class="hljs-function">rotate</span>(-<span class="hljs-number">45deg</span>)</span></span>;
+<span class="hljs-rule">}</span></span>
+</code></pre>
+<h5>更多资料：</h5>
+<p><a href="http://flippinawesome.org/2013/08/12/writing-better-css/?utm_source=html5weekly&amp;utm_medium=email" target="_blank">书写更好性能的CSS</a><br><a href="https://github.com/jtyjty99999/mobileTech" target="_blank">https://github.com/jtyjty99999/mobileTech</a><br><a href="http://www.slideshare.net/lijing00333/web-13546648" target="_blank">http://www.slideshare.net/lijing00333/web-13546648</a></p>
+</body></html>

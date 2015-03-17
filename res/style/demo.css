@@ -1,0 +1,78 @@
+@charset "utf-8";
+/* demo header 库中可以删除 */
+.demo-header {
+	width: calc(100% - 240px);
+	height: 50px;
+	line-height: 50px;
+	color: #fff;
+	font-size: 18px;
+	background-color: #009688;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, .26);
+	left: 240px;
+	top: 0;
+	position: fixed;
+	padding-left: 40px;
+	box-sizing: border-box;
+	text-transform: capitalize;
+}
+.demo-side-wrapper {
+	width: 240px;
+	height: 100%;
+	border-right: 1px solid #e0e0e0;
+	background: #fff;
+	color: #000;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	-webkit-overflow-scrolling: touch;
+	overflow-x: hidden;
+	overflow-y: auto
+}
+#demo-logo {
+	text-align: center;
+	font-size: 18px;
+	height: 50px;
+	line-height: 50px;
+	margin-bottom: 10px;
+	border-bottom: 1px solid #e0e0e0;
+	text-transform: uppercase;
+	box-shadow:0 0 15px rgba(0,0,0,.1);
+}
+.demo-side-nav dt a{
+	color: #000;
+	padding: 10px 0 10px 22px;
+	cursor: pointer;
+	display: block;
+}
+.demo-side-nav dt a {
+	color: #000
+}
+.demo-side-nav dt:hover, .demo-side-nav dt:active {
+	background-color: #eee;
+	outline: 0
+}
+.demo-side-nav dt {
+	text-transform: capitalize
+}
+.demo-side-nav a.demo-nav-selected {
+	font-weight: 700;
+	color: #009688
+}
+.demo-side-nav dd a {
+	color: #696969;
+	display: block;
+	font-weight: 400;
+	letter-spacing: .1px;
+	padding: 10px 24px 10px 46px;
+	white-space: nowrap;
+	text-transform: capitalize
+}
+
+/* demo right */
+.demo-grid-cont {
+	float: left;
+	height: 100%;
+	padding: 80px 30px 40px 270px;
+	width: 100%;
+	box-sizing: border-box;
+}

@@ -1,0 +1,209 @@
+@charset "utf-8";
+
+/** Animation 名称及应用场景
+ * fadeIn ：Image 
+ * rotateRound 组件: 阻断加载、增量加载(.ibg-load-c)
+ * scale
+ * 
+ * 
+ */
+/* ===================== Animation Lib ===================== */
+
+/*-------------------- Fade --------------------*/
+/* fadeIn */
+@-webkit-keyframes fadeIn {
+	0% {
+		opacity:0;
+	}
+	100% {
+		opacity:1;
+	}
+}
+/* fadeOut */
+@-webkit-keyframes fadeOut {
+	0% {
+		opacity:1;
+	}
+	100% {
+		opacity:0;
+	}
+}
+/* fadeUp */
+@-webkit-keyframes fadeUp {
+	0% {
+		-webkit-transform:translateY(100%);
+	}
+	100% {
+		-webkit-transform:translateY(0);
+	}
+}
+/* fadeRight */
+@-webkit-keyframes fadeRight {
+	0% {
+		-webkit-transform:translateX(-100%);
+	}
+	100% {
+		-webkit-transform:translateX(0);
+	}
+}
+/* fadeDown */
+@-webkit-keyframes fadeDown {
+	0% {
+		-webkit-transform:translateY(-100%);
+	}
+	100% {
+		-webkit-transform:translateY(0);
+	}
+}
+
+/* fadeLeft */
+@-webkit-keyframes fadeLeft {
+	0% {
+		-webkit-transform:translateX(100%);
+	}
+	100% {
+		-webkit-transform:translateX(0);
+	}
+}
+
+/*-------------------- Bounce --------------------*/
+/* bounceIn */
+@-webkit-keyframes bounceIn {
+    0%,45% {
+        -webkit-transform: scale(1);
+        opacity: 0
+    }
+    46% {
+        -webkit-transform: scale(1.15);
+        opacity: 0
+    }
+    100% {
+        -webkit-transform: scale(1);
+        opacity: 1
+    }
+}
+/* bounceOut */
+@-webkit-keyframes bounceOut {
+    0%,30%{
+        -webkit-transform: scale(1);
+        opacity: 1
+    }
+    90%,100% {
+        -webkit-transform: scale(.75);
+        opacity: 0
+    }
+}
+@-webkit-keyframes bounceInUp { 
+	0% { 
+		-webkit-transform: translateY(1000%);
+	}
+    60% { 
+    	-webkit-transform: translateY(-30%); 
+    }
+    80% { 
+    	-webkit-transform: translateY(15%);
+    }
+    100% { 
+    	-webkit-transform: translateY(0); 
+    } 
+}
+@-webkit-keyframes bounceInRight { 
+	0% { 
+		-webkit-transform: translateX(500%);
+	}
+    60% { 
+    	-webkit-transform: translateX(-15%); 
+    }
+    80% { 
+    	-webkit-transform: translateX(15%);
+    }
+    100% { 
+    	-webkit-transform: translateX(0); 
+    } 
+}
+@-webkit-keyframes bounceInDown { 
+	0% { 
+		-webkit-transform: translateY(-1000%);
+	}
+    60% { 
+    	-webkit-transform: translateY(30%); 
+    }
+    80% { 
+    	-webkit-transform: translateY(-15%);
+    }
+    100% { 
+    	-webkit-transform: translateY(0); 
+    } 
+}
+@-webkit-keyframes bounceInLeft { 
+	0% { 
+		-webkit-transform: translateX(-500%);
+	}
+    60% { 
+    	-webkit-transform: translateX(15%); 
+    }
+    80% { 
+    	-webkit-transform: translateX(-15%);
+    }
+    100% { 
+    	-webkit-transform: translateX(0); 
+    }
+}
+
+/*-------------------- Rotate --------------------*/
+/* rotateRound 360deg */
+@-webkit-keyframes rotateRound{
+	0% {
+		-webkit-transform:rotate(0deg);
+	}
+	100% {
+		-webkit-transform:rotate(360deg);
+	}
+}
+/* rotateLeftUp */
+@-webkit-keyframes rotateLeftUp {
+	0% {
+		-webkit-transform:rotate(90deg);
+		-webkit-transform-origin:left top;
+	}
+	100% {
+		-webkit-transform:rotate(0deg);
+		-webkit-transform-origin:left top;
+	}
+}
+/* rotateLeftDown */
+@-webkit-keyframes rotateLeftDown {
+	0% {
+		-webkit-transform:rotate(-90deg);
+		-webkit-transform-origin:left bottom;
+	}
+	100% {
+		-webkit-transform:rotate(0deg);
+		-webkit-transform-origin:left bottom;
+	}
+}
+/* rotateRightUp */
+@-webkit-keyframes rotateRightUp {
+	0% {
+		-webkit-transform:rotate(90deg);
+		-webkit-transform-origin:right top;
+	}
+	100% {
+		-webkit-transform:rotate(0deg);
+		-webkit-transform-origin:right top;
+	}
+}
+/* rotateRightDown */
+@-webkit-keyframes rotateRightDown {
+	0% {
+		-webkit-transform:rotate(-90deg);
+		-webkit-transform-origin:right bottom;
+	}
+	100% {
+		-webkit-transform:rotate(0deg);
+		-webkit-transform-origin:right bottom;
+	}
+}
+
+/*-------------------- Viewport --------------------*/
+/* rotateRightDown */
